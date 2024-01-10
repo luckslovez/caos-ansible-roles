@@ -34,7 +34,7 @@ Then, in the `install-requirements.yml` of this example:
   tasks:
     - name: Install CrowdStrike Falcon
       include_role:
-        name: install-crowdstrike-falcon
+        name: install_crowdstrike_falcon
 ```
 
 ### Passing credentials via environment variables
@@ -53,5 +53,5 @@ Very similar to the above, but `lookup` directly in the playbook:
   tasks:
     - name: Install CrowdStrike Falcon
       include_role:
-        name: install-crowdstrike-falcon
+        name: install_crowdstrike_falcon
 ```

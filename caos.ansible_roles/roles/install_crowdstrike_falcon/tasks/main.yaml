@@ -26,11 +26,11 @@
     crowdstrike_falcon_hash: "{{ item.hash }}"
   when: crowdstrike_falcon_hash is undefined
     and
-    ansible_distribution is search(item.distribution)
+    ansible_distribution == item.distribution
     and
-    ansible_distribution_major_version is search(item.major_version)
+    ansible_distribution_major_version == item.major_version
     and
-    ansible_architecture is search(item.architecture)
+    ansible_architecture == item.architecture
   loop: "{{ falcon_hash_ansible_facts_based }}"
 
 - name: Check mandatory

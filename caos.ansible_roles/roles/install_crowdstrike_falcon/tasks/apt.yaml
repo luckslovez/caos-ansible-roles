@@ -10,12 +10,6 @@
     dest: /tmp/falcon-sensor.deb
     mode: 0644
 
-- name: 'Install libnl3 for aarch64'
-  zypper:
-    name: libnl3-200
-    state: present
-  when: ansible_architecture == "aarch64" and ansible_distribution == "Ubuntu" and "ansible_distribution_version" == "24.04"
-
 - name: 'Install the obtained DEB (apt)'
   apt:
     deb: /tmp/falcon-sensor.deb
